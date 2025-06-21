@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock title %}
+{% block body %}
+<section class="py-5 bg-light" id="projects">
+  <div class="container">
+    <h2 class="text-center mb-5">My Projects</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      <!-- Project 1 -->
+      <div class="col">
+        <div class="card h-100 shadow d-flex flex-column">
+          <img src="/static/img/DscPro.png" class="card-img-top" alt="Sales Forecasting">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Data-Driven Sales Forecasting</h5>
+            <p class="card-text">Built predictive models using Linear and KNN Regression to forecast sales trends based on historical data, evaluated using MAE, MSE, and R² score.</p>
+            <p><strong>Tech:</strong> Python, Machine Learning, Flask and MySQL</p>
+            <div class="mt-auto">
+              <a href="https://github.com/akshitverse/Data-Driven-Sales-Forecasting-Using-Advanced-Predictive-Analytics" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col">
+        <div class="card h-100 shadow d-flex flex-column">
+          <img src="/static/img/Accesszone.jpeg" class="card-img-top" alt="AccessZone">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">AccessZone</h5>
+            <p class="card-text">An e-commerce platform focused on selling mobile components. Designed backend architecture, APIs, and authentication.</p>
+            <p><strong>Tech:</strong> Node.js, MongoDB, Express</p>
+            <div class="mt-auto">
+              <a href="https://github.com/akshitverse/minor-project" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col">
+        <div class="card h-100 shadow d-flex flex-column">
+          <img src="/static/img/RaktDaan.jpeg" class="card-img-top" alt="Rakt Daan">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Rakt Daan</h5>
+            <p class="card-text">A blood donation web app built using the MERN stack. Tracks donors, manages requests, and notifies admins.</p>
+            <p><strong>Tech:</strong> MongoDB, Express, React, Node.js</p>
+            <div class="mt-auto">
+              <a href="https://github.com/akshitverse/mern-Project" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock body %}

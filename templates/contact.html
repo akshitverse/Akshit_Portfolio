@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0 mb-3">
+    <img src='https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&h=400&fit=crop' class='d-block w-100 my-0' alt='...'>
+</div>
+
+<div class="container">
+    <h2 style="text-align: center;">Contact Me</h2>
+    <form method="post" action="/contact">
+        {% csrf_token %} 
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ name|default:'' }}" placeholder="Enter your Name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email"  value="{{ email|default:'' }}" placeholder="Enter your Email" aria-describedby="emailHelp" required>
+            <div id="emailHelp" class="form-text">I'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="number" class="form-control" id="phone" name="phone" required>
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Tell me what you want to contact me for..</label>
+            <textarea class="form-control" id="desc" name="desc" rows="3" required>{{ desc|default:'' }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Hidden div to hold the message if exists -->
+{% if messages %}
+  {% for message in messages %}
+    <div id="toast-message" data-message="{{ message }}" data-tag="{{ message.tags }}"></div>
+  {% endfor %}
+{% endif %}
+
+<!-- Toast HTML -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastBody">
+        <!-- Filled by JS -->
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to trigger toast -->
+<script>
+  window.onload = function () {
+    const toastDiv = document.getElementById('toast-message');
+    if (toastDiv) {
+      const message = toastDiv.dataset.message;
+      const tag = toastDiv.dataset.tag;
+      const toastBody = document.getElementById('toastBody');
+      const toastEl = document.getElementById('liveToast');
+
+      // Set the message
+      toastBody.textContent = message;
+
+      // Set background color based on message tag
+      let toastClass = "text-bg-primary";
+      if (tag === "success") toastClass = "text-bg-success";
+      else if (tag === "error") toastClass = "text-bg-danger";
+      else if (tag === "warning") toastClass = "text-bg-warning";
+      else if (tag === "info") toastClass = "text-bg-info";
+
+      // Apply class
+      toastEl.classList.add(toastClass);
+
+      // Show toast
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
+    }
+  };
+</script>
+{% endblock body %}

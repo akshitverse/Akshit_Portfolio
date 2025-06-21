@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Internship Experience{% endblock title %}
+{% block body %}
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Internship Experience</h2>
+
+    <div class="row align-items-center">
+      <!-- Text Left -->
+      <div class="col-md-6">
+        <h4>Sofitra Analytics</h4>
+        <p class="text-muted">Research Analyst Intern (Remote)</p>
+        <ul>
+          <li>Completed a remote internship focusing on automating Excel tasks using VBA macros.</li>
+          <li>Attended regular morning meetings to report progress and align with mentors.</li>
+          <li>Improved efficiency by creating custom automation tools for repetitive data processing tasks.</li>
+        </ul>
+        <p><strong>Skills:</strong> Excel, VBA, Macro Automation, Reporting</p>
+        <a href="/static/resumes/Akshit ExperienceLetter.pdf" target="_blank" class="btn btn-outline-primary btn-sm mt-2">View Experience Letter</a>
+      </div>
+
+      <!-- Image Right -->
+      <div class="col-md-6 text-center">
+        <img src="/static/img/vba.png" class="img-fluid rounded shadow" style="max-height: 350px;" alt="Internship Work">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock body %}
