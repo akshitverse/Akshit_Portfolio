@@ -1,13 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}About{% endblock title %}
 {% block body %}
+
 <div class="container-fluid px-0 mb-3">
-    <img src="/static/img/about_me.jpeg" class="w-100" style="height: 60vh; object-fit: cover;" alt="...">
+  <img src="{% static 'img/about_me.jpeg' %}" class="w-100" style="height: 60vh; object-fit: cover;" alt="About Banner">
 </div>
+
 <section class="py-5 bg-light" id="about">
   <div class="container">
     <div class="row align-items-center">
-      
+
       <!-- Left Column: About Me Text -->
       <div class="col-md-6 mb-4 mb-md-0">
         <h2 class="mb-3">About Me</h2>
@@ -15,7 +18,7 @@
           Hi, I'm Akshit Verma, a passionate backend developer currently pursuing BCA from JIMS. I have strong interests in Python, API development, and database design. I enjoy building efficient systems and continuously improving my problem-solving skills through DSA and real-world projects.
         </p>
         <p>
-          I've worked on impactful projects like <strong>Rakt Daan</strong> (Blood Donation System) and <strong>AccessZone</strong> (E-Commerce Website), focusing on clean backend architecture and real-time functionality.I also worked on a data science project titled <strong>"Data-Driven Sales Forecasting Using Advanced Predictive Analytics"</strong>, where I applied machine learning techniques using Python to forecast sales. The project involved building models like Linear and KNN Regression and evaluating them with metrics such as MAE, MSE, and R² score to ensure accuracy and reliability.
+          I've worked on impactful projects like <strong>Rakt Daan</strong> (Blood Donation System) and <strong>AccessZone</strong> (E-Commerce Website), focusing on clean backend architecture and real-time functionality. I also worked on a data science project titled <strong>"Data-Driven Sales Forecasting Using Advanced Predictive Analytics"</strong>, where I applied machine learning techniques using Python to forecast sales. The project involved building models like Linear and KNN Regression and evaluating them with metrics such as MAE, MSE, and R² score to ensure accuracy and reliability.
         </p>
         <p>
           I also completed an internship at <strong>Sofitra Analytics</strong> as a Research Analyst, where I automated Excel-based workflows using VBA. This experience helped me strengthen my data analysis skills and taught me how to build efficient macros for repetitive tasks, which significantly improved productivity.
@@ -24,7 +27,7 @@
 
       <!-- Right Column: Profile Photo + Contact Links -->
       <div class="col-md-6 text-center">
-        <img src="/static/img/me.jpg" alt="Akshit Verma" class="img-fluid rounded shadow mb-3" style="max-height: 400px;">
+        <img src="{% static 'img/me.jpg' %}" alt="Akshit Verma" class="img-fluid rounded shadow mb-3" style="max-height: 400px;">
         
         <!-- Contact Info -->
         <div class="mt-3">
@@ -52,35 +55,37 @@
       <!-- Card 1 -->
       <div class="col">
         <div class="card h-100" data-bs-toggle="modal" data-bs-target="#certModal1" style="cursor: pointer;">
-          <img src="/static/img/mern.jpeg" class="card-img-top" alt="Certificate 1">
+          <img src="{% static 'img/mern.jpeg' %}" class="card-img-top" alt="Certificate 1">
           <div class="card-body">
             <p class="card-text">MERN Stack Developer</p>
           </div>
         </div>
       </div>
 
-      <!-- Repeat for other cards -->
+      <!-- Card 2 -->
       <div class="col">
         <div class="card h-100" data-bs-toggle="modal" data-bs-target="#certModal2" style="cursor: pointer;">
-          <img src="/static/img/excel.jpeg" class="card-img-top" alt="Certificate 2">
+          <img src="{% static 'img/excel.jpeg' %}" class="card-img-top" alt="Certificate 2">
           <div class="card-body">
             <p class="card-text">Excel for Data Analysis & Visualization – JIMS</p>
           </div>
         </div>
       </div>
 
+      <!-- Card 3 -->
       <div class="col">
         <div class="card h-100" data-bs-toggle="modal" data-bs-target="#certModal3" style="cursor: pointer;">
-          <img src="/static/img/java bootcamp.jpg" class="card-img-top" alt="Certificate 3">
+          <img src="{% static 'img/java bootcamp.jpg' %}" class="card-img-top" alt="Certificate 3">
           <div class="card-body">
             <p class="card-text">Java Bootcamp – Udemy</p>
           </div>
         </div>
       </div>
 
+      <!-- Card 4 -->
       <div class="col">
         <div class="card h-100" data-bs-toggle="modal" data-bs-target="#certModal4" style="cursor: pointer;">
-          <img src="/static/img/sih.jpeg" class="card-img-top" alt="Certificate 4">
+          <img src="{% static 'img/sih.jpeg' %}" class="card-img-top" alt="Certificate 4">
           <div class="card-body">
             <p class="card-text">Smart India Hackathon – Internal Hackathon Certificate</p>
           </div>
@@ -91,84 +96,77 @@
   </div>
 </section>
 
-<!-- Skills section-->
+<!-- Skills section -->
 <section class="py-5 bg-light" id="skills">
   <div class="container">
     <h2 class="text-center mb-5">Skills</h2>
 
     <div class="row text-center">
-      <!-- Programming Languages -->
+      <!-- Programming -->
       <div class="col-12 col-md-4 mb-4">
         <h5 class="mb-3"><i class="bi bi-code-slash"></i> Programming</h5>
-        <span class="badge bg-primary mx-1 my-1" data-bs-toggle="tooltip" title="Used in Data Science and Backend APIs">Python</span>
-        <span class="badge bg-primary mx-1 my-1" data-bs-toggle="tooltip" title="Used in DSA and backend systems">Java</span>
-        <span class="badge bg-primary mx-1 my-1" data-bs-toggle="tooltip" title="Used in web projects and dynamic pages">JavaScript</span>
-        <span class="badge bg-primary mx-1 my-1" data-bs-toggle="tooltip" title="Used in OOP and competitive programming">C++</span>
+        <span class="badge bg-primary mx-1 my-1">Python</span>
+        <span class="badge bg-primary mx-1 my-1">Java</span>
+        <span class="badge bg-primary mx-1 my-1">JavaScript</span>
+        <span class="badge bg-primary mx-1 my-1">C++</span>
       </div>
 
-      <!-- Web Development -->
+      <!-- Web Dev -->
       <div class="col-12 col-md-4 mb-4">
         <h5 class="mb-3"><i class="bi bi-globe"></i> Web Development</h5>
-        <span class="badge bg-success mx-1 my-1" data-bs-toggle="tooltip" title="Markup language for building web structure">HTML</span>
-        <span class="badge bg-success mx-1 my-1" data-bs-toggle="tooltip" title="Used for styling and layout design">CSS</span>
-        <span class="badge bg-success mx-1 my-1" data-bs-toggle="tooltip" title="Backend runtime for Rakt Daan & AccessZone">Node.js</span>
-        <span class="badge bg-success mx-1 my-1" data-bs-toggle="tooltip" title="Used in backend APIs">Express.js</span>
-        <span class="badge bg-success mx-1 my-1" data-bs-toggle="tooltip" title="Used in frontend of Rakt Daan">React</span>
-        <span class="badge bg-success mx-1 my-1" data-bs-toggle="tooltip" title="Used in portfolio and basic web apps">Django</span>
+        <span class="badge bg-success mx-1 my-1">HTML</span>
+        <span class="badge bg-success mx-1 my-1">CSS</span>
+        <span class="badge bg-success mx-1 my-1">Node.js</span>
+        <span class="badge bg-success mx-1 my-1">Express.js</span>
+        <span class="badge bg-success mx-1 my-1">React</span>
+        <span class="badge bg-success mx-1 my-1">Django</span>
       </div>
 
       <!-- Data & Tools -->
       <div class="col-12 col-md-4 mb-4">
         <h5 class="mb-3"><i class="bi bi-bar-chart"></i> Data & Tools</h5>
-        <span class="badge bg-warning text-dark mx-1 my-1" data-bs-toggle="tooltip" title="Used in querying data for dashboards">SQL</span>
-        <span class="badge bg-warning text-dark mx-1 my-1" data-bs-toggle="tooltip" title="Used with Flask and backend projects">MySQL</span>
-        <span class="badge bg-warning text-dark mx-1 my-1" data-bs-toggle="tooltip" title="Used for sales forecasting visuals">Power BI</span>
-        <span class="badge bg-warning text-dark mx-1 my-1" data-bs-toggle="tooltip" title="Used during internship & analysis tasks">Excel</span>
-        <span class="badge bg-warning text-dark mx-1 my-1" data-bs-toggle="tooltip" title="Used for version control in all projects">Git</span>
-        <span class="badge bg-warning text-dark mx-1 my-1" data-bs-toggle="tooltip" title="Hosting and versioning codebases">GitHub</span>
+        <span class="badge bg-warning text-dark mx-1 my-1">SQL</span>
+        <span class="badge bg-warning text-dark mx-1 my-1">MySQL</span>
+        <span class="badge bg-warning text-dark mx-1 my-1">Power BI</span>
+        <span class="badge bg-warning text-dark mx-1 my-1">Excel</span>
+        <span class="badge bg-warning text-dark mx-1 my-1">Git</span>
+        <span class="badge bg-warning text-dark mx-1 my-1">GitHub</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Models for certificates-->
-<!-- Modal 1 -->
+<!-- Certificate Modals -->
 <div class="modal fade" id="certModal1" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <img src="/static/img/mern.jpeg" class="img-fluid rounded" alt="Certificate 1">
+      <img src="{% static 'img/mern.jpeg' %}" class="img-fluid rounded" alt="Certificate 1">
     </div>
   </div>
 </div>
 
-<!-- Modal 2 -->
 <div class="modal fade" id="certModal2" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <img src="/static/img/excel.jpeg" class="img-fluid rounded" alt="Certificate 2">
+      <img src="{% static 'img/excel.jpeg' %}" class="img-fluid rounded" alt="Certificate 2">
     </div>
   </div>
 </div>
 
-<!-- Modal 3 -->
 <div class="modal fade" id="certModal3" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <img src="/static/img/java bootcamp.jpg" class="img-fluid rounded" alt="Certificate 3">
+      <img src="{% static 'img/java bootcamp.jpg' %}" class="img-fluid rounded" alt="Certificate 3">
     </div>
   </div>
 </div>
 
-<!-- Modal 4 -->
 <div class="modal fade" id="certModal4" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <img src="/static/img/sih.jpeg" class="img-fluid rounded" alt="Certificate 4">
+      <img src="{% static 'img/sih.jpeg' %}" class="img-fluid rounded" alt="Certificate 4">
     </div>
   </div>
 </div>
 
-
-
 {% endblock body %}
-

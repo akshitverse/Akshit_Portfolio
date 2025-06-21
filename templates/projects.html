@@ -1,3 +1,4 @@
+{% load static %}
 {% extends "base.html" %}
 {% block title %}Projects{% endblock title %}
 {% block body %}
@@ -9,7 +10,7 @@
       <!-- Project 1 -->
       <div class="col">
         <div class="card h-100 shadow d-flex flex-column">
-          <img src="/static/img/DscPro.png" class="card-img-top" alt="Sales Forecasting">
+          <img src="{% static 'img/DscPro.png' %}" class="card-img-top" alt="Sales Forecasting">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Data-Driven Sales Forecasting</h5>
             <p class="card-text">Built predictive models using Linear and KNN Regression to forecast sales trends based on historical data, evaluated using MAE, MSE, and R² score.</p>
@@ -24,7 +25,7 @@
       <!-- Project 2 -->
       <div class="col">
         <div class="card h-100 shadow d-flex flex-column">
-          <img src="/static/img/Accesszone.jpeg" class="card-img-top" alt="AccessZone">
+          <img src="{% static 'img/Accesszone.jpeg' %}" class="card-img-top" alt="AccessZone">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">AccessZone</h5>
             <p class="card-text">An e-commerce platform focused on selling mobile components. Designed backend architecture, APIs, and authentication.</p>
@@ -39,7 +40,7 @@
       <!-- Project 3 -->
       <div class="col">
         <div class="card h-100 shadow d-flex flex-column">
-          <img src="/static/img/RaktDaan.jpeg" class="card-img-top" alt="Rakt Daan">
+          <img src="{% static 'img/RaktDaan.jpeg' %}" class="card-img-top" alt="Rakt Daan">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Rakt Daan</h5>
             <p class="card-text">A blood donation web app built using the MERN stack. Tracks donors, manages requests, and notifies admins.</p>
